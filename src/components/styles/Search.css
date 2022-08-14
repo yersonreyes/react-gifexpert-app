@@ -1,0 +1,29 @@
+.search-container {
+  padding: 1rem 0;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-container input {
+  padding: 0.5rem;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: none;
+}
+
+.search-container button {
+  padding: 0.5rem;
+  width: 100px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: none;
+  background-color: #747bff;
+  color: white;
+  cursor: pointer;
+}
+
+.search-container button:active {
+  transform: scale(0.9);
+}
