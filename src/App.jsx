@@ -1,11 +1,12 @@
 import { useState } from "react";
-import GifCard from "./components/GifCard";
+import GifGrid from "./components/GifGrid";
 import Search from "./components/Search";
 
 const App = () => {
-  const [categories, setCategories] = useState(["hola Mundo"]);
+  const [categories, setCategories] = useState(["Hello World"]);
 
   const onAddCategory = (newCategori) => {
+    if (categories.includes(newCategori)) return;
     setCategories([newCategori, ...categories]);
   };
 
@@ -13,7 +14,9 @@ const App = () => {
     <div className="container">
       <h1 className="title">Busca tu gif</h1>
       <Search onNewCategory={(value) => onAddCategory(value)} />
-      <GifCard />
+      {categories.map((categori) => (
+        <GifGrid categori={categori} key={categori} />
+      ))}
     </div>
   );
 };
